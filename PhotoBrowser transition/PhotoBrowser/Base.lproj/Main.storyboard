@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IqU-79-pAT">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--图片浏览自定义转场动画-->
+        <scene sceneID="wxN-Ya-wmx">
+            <objects>
+                <collectionViewController id="fe1-Bt-uwm" customClass="ZKHomeViewController" customModule="PhotoBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Vg5-1g-NgC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewLayout key="collectionViewLayout" id="LQa-de-V7U" customClass="ZKHomeCollectionViewLayout" customModule="PhotoBrowser" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="Nyp-EM-Vc4" customClass="ZKHomeViewCell" customModule="PhotoBrowser" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="118" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="118" height="115"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NIt-WK-ZmT">
+                                            <rect key="frame" x="0.0" y="0.0" width="118" height="115"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="NIt-WK-ZmT" firstAttribute="top" secondItem="Nyp-EM-Vc4" secondAttribute="top" id="BfA-HO-cKY"/>
+                                    <constraint firstAttribute="trailing" secondItem="NIt-WK-ZmT" secondAttribute="trailing" id="LuU-NF-sPW"/>
+                                    <constraint firstAttribute="bottom" secondItem="NIt-WK-ZmT" secondAttribute="bottom" id="Oq9-wI-nCT"/>
+                                    <constraint firstItem="NIt-WK-ZmT" firstAttribute="leading" secondItem="Nyp-EM-Vc4" secondAttribute="leading" id="UZd-B1-ctq"/>
+                                </constraints>
+                                <size key="customSize" width="118" height="115"/>
+                                <connections>
+                                    <outlet property="shopImageView" destination="NIt-WK-ZmT" id="UoR-wC-8FX"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="fe1-Bt-uwm" id="oO5-re-YMQ"/>
+                            <outlet property="delegate" destination="fe1-Bt-uwm" id="fhF-gi-CPF"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="图片浏览自定义转场动画" id="Lbn-Hx-X8K"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffb-aU-AcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1491.5" y="287.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k42-l7-we1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IqU-79-pAT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6AH-9d-e73">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fe1-Bt-uwm" kind="relationship" relationship="rootViewController" id="bAg-sR-8hi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAu-Oe-rUd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920" y="288"/>
+        </scene>
+    </scenes>
+</document>
